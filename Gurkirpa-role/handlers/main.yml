@@ -1,6 +1,0 @@
----
-# handlers file for Gurkirpa-role
-- name: restart mysql
-  service:
-     name: mysql
-     state: restarted
