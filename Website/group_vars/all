@@ -1,0 +1,4 @@
+web_url: "https://github.com/Gurkirpa/html-demo.git"
+destination: "/tmp/html-demo"
+svc: "apache2"
+html_url: "/var/www/html"

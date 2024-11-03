@@ -1,0 +1,34 @@
+---
+- name: Setup web server
+  hosts: all
+  become: yes
+  tasks:
+
+    - name: Download file from GitHub
+      ansible.builtin.get_url:
+        url: "{{ web_url }}"
+        dest: "{{ destination }}"
+
+    - name: Install Apache2
+      apt:
+        name: "{{ svc }}"
+        state: present
+		
+    - name: Update apt cache
+      apt:
+        update_cache: yes	
+
+    - name: Start and enable apache2
+      service:
+        name: "{{ svc }}"
+		state: started
+		
+	- name: Copy files to /var/www/html
+      copy:
+        src: "{{ destination }}"
+        dest: "{{html_url }}"
+		
+	- name: Restart apache2
+      service:
+        name: "{{ svc }}"
+		state: restarted
