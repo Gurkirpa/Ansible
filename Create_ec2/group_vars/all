@@ -1,0 +1,7 @@
+instance_name: "MyEC2Instance"
+region: "us-east-1"                      
+ami_id: "ami-0c55b159cbfafe1f0"         
+instance_type: "t2.micro"              
+key_name: "my-key-pair"               
+security_group: "sg-0bb1c7e7d6e0b6c1b"  
+subnet_id: "subnet-0bb1c7e7d6e0b6c1b"  
